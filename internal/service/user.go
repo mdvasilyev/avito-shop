@@ -2,9 +2,10 @@ package service
 
 import (
 	"errors"
+	"log/slog"
+
 	"github.com/mdvasilyev/avito-shop/internal/model"
 	"github.com/mdvasilyev/avito-shop/internal/repository"
-	"log/slog"
 )
 
 type UserService struct {
@@ -16,22 +17,22 @@ func NewUserService(lgr *slog.Logger, repo *repository.UserRepository) *UserServ
 	return &UserService{lgr: lgr, repo: repo}
 }
 
-func (srv *UserService) Info(userId int) (*model.UserResponse, error) {
+func (srv *UserService) Info(userID int) (*model.UserResponse, error) {
 	srv.lgr.Info("Getting info")
 
-	coins, err := srv.repo.GetUserCoins(userId)
+	coins, err := srv.repo.GetUserCoins(userID)
 	if err != nil {
 		srv.lgr.Error("Error while getting user coins", "error", err)
 		return nil, errors.New("error while getting user coins")
 	}
 
-	inventory, err := srv.repo.GetUserInventory(userId)
+	inventory, err := srv.repo.GetUserInventory(userID)
 	if err != nil {
 		srv.lgr.Error("Error while getting user inventory", "error", err)
 		return nil, errors.New("error while getting user inventory")
 	}
 
-	coinHistory, err := srv.repo.GetCoinTransactions(userId)
+	coinHistory, err := srv.repo.GetCoinTransactions(userID)
 	if err != nil {
 		srv.lgr.Error("Error while getting coin transactions", "error", err)
 		return nil, errors.New("error while getting coin transactions")

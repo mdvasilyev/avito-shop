@@ -3,8 +3,9 @@ package repository
 import (
 	"database/sql"
 	"errors"
-	"github.com/mdvasilyev/avito-shop/internal/model"
 	"log/slog"
+
+	"github.com/mdvasilyev/avito-shop/internal/model"
 )
 
 type MerchRepository struct {
@@ -22,7 +23,7 @@ func (rps *MerchRepository) BeginTx() (*sql.Tx, error) {
 	return rps.db.Begin()
 }
 
-func (rps *MerchRepository) GetUserById(userID int) (model.User, error) {
+func (rps *MerchRepository) GetUserByID(userID int) (model.User, error) {
 	rps.lgr.Info("Getting user by id")
 
 	row := rps.db.QueryRow(

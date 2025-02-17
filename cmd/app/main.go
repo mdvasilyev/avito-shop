@@ -1,11 +1,12 @@
 package main
 
 import (
+	"log/slog"
+	"os"
+
 	"github.com/mdvasilyev/avito-shop/internal/app"
 	"github.com/mdvasilyev/avito-shop/internal/config"
 	"github.com/mdvasilyev/avito-shop/internal/db"
-	"log/slog"
-	"os"
 )
 
 func main() {

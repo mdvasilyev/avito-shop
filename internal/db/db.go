@@ -3,9 +3,10 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"log/slog"
+
 	_ "github.com/lib/pq"
 	"github.com/mdvasilyev/avito-shop/internal/config"
-	"log/slog"
 )
 
 func Connect(lgr *slog.Logger, config *config.Config) (*sql.DB, error) {

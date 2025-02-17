@@ -1,9 +1,10 @@
 package helper
 
 import (
-	"github.com/golang-jwt/jwt/v4"
 	"os"
 	"time"
+
+	"github.com/golang-jwt/jwt/v4"
 )
 
 func NewToken(userID int) (string, error) {
@@ -22,7 +23,7 @@ func NewToken(userID int) (string, error) {
 func ValidateToken(tokenString string) (*jwt.MapClaims, error) {
 	secret := os.Getenv("JWT_SECRET")
 
-	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (any, error) {
+	token, err := jwt.Parse(tokenString, func(_ *jwt.Token) (any, error) {
 		return secret, nil
 	})
 	if err != nil {

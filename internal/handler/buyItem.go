@@ -1,10 +1,11 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/mdvasilyev/avito-shop/internal/service"
 	"log/slog"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/mdvasilyev/avito-shop/internal/service"
 )
 
 type MerchHandler struct {

@@ -1,11 +1,12 @@
 package handler
 
 import (
+	"log/slog"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/mdvasilyev/avito-shop/internal/model"
 	"github.com/mdvasilyev/avito-shop/internal/service"
-	"log/slog"
-	"net/http"
 )
 
 type AuthHandler struct {

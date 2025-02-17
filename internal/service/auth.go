@@ -2,9 +2,10 @@ package service
 
 import (
 	"errors"
+	"log/slog"
+
 	"github.com/mdvasilyev/avito-shop/internal/helper"
 	"github.com/mdvasilyev/avito-shop/internal/repository"
-	"log/slog"
 )
 
 type AuthService struct {

@@ -1,6 +1,6 @@
 package model
 
 type AuthRequest struct {
-	Username string `json:"username" binding:"required"`
-	Password string `json:"password" binding:"required"`
+	Username string `binding:"required" json:"username"`
+	Password string `binding:"required" json:"password"`
 }

@@ -2,8 +2,9 @@ package service
 
 import (
 	"errors"
-	"github.com/mdvasilyev/avito-shop/internal/repository"
 	"log/slog"
+
+	"github.com/mdvasilyev/avito-shop/internal/repository"
 )
 
 type MerchService struct {
@@ -25,7 +26,7 @@ func (srv *MerchService) BuyItem(userID int, itemName string) error {
 	}
 	defer tx.Rollback()
 
-	user, err := srv.repo.GetUserById(userID)
+	user, err := srv.repo.GetUserByID(userID)
 	if err != nil {
 		srv.lgr.Error("Error while getting user by id", "error", err)
 		return errors.New("user not found")

@@ -2,12 +2,13 @@ package router
 
 import (
 	"database/sql"
+	"log/slog"
+
 	"github.com/gin-gonic/gin"
 	"github.com/mdvasilyev/avito-shop/internal/handler"
 	"github.com/mdvasilyev/avito-shop/internal/middleware"
 	"github.com/mdvasilyev/avito-shop/internal/repository"
 	"github.com/mdvasilyev/avito-shop/internal/service"
-	"log/slog"
 )
 
 func SetupRoutes(lgr *slog.Logger, rtr *gin.Engine, dbConn *sql.DB) {

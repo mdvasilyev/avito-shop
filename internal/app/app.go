@@ -4,16 +4,17 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/mdvasilyev/avito-shop/internal/config"
-	"github.com/mdvasilyev/avito-shop/internal/router"
-	sloggin "github.com/samber/slog-gin"
 	"log/slog"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/mdvasilyev/avito-shop/internal/config"
+	"github.com/mdvasilyev/avito-shop/internal/router"
+	sloggin "github.com/samber/slog-gin"
 )
 
 func RunServer(lgr *slog.Logger, cfg *config.Config, dbConn *sql.DB) {

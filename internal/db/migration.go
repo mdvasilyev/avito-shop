@@ -2,8 +2,9 @@ package db
 
 import (
 	"database/sql"
-	"github.com/pressly/goose/v3"
 	"log/slog"
+
+	"github.com/pressly/goose/v3"
 )
 
 func RunMigrations(lgr *slog.Logger, db *sql.DB, migrationsPath string) error {

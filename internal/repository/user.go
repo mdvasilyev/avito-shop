@@ -3,8 +3,9 @@ package repository
 import (
 	"database/sql"
 	"errors"
-	"github.com/mdvasilyev/avito-shop/internal/model"
 	"log/slog"
+
+	"github.com/mdvasilyev/avito-shop/internal/model"
 )
 
 type UserRepository struct {

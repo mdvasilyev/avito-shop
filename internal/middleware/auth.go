@@ -1,11 +1,13 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/mdvasilyev/avito-shop/internal/helper"
 	"log/slog"
 	"net/http"
 	"strings"
+
+	"github.com/gin-gonic/gin"
+
+	"github.com/mdvasilyev/avito-shop/internal/helper"
 )
 
 func AuthMiddleware(lgr *slog.Logger) gin.HandlerFunc {
@@ -17,6 +19,7 @@ func AuthMiddleware(lgr *slog.Logger) gin.HandlerFunc {
 			lgr.Error("Missing authorization header")
 			ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Missing authorization header"})
 			ctx.Abort()
+
 			return
 		}
 
@@ -27,6 +30,7 @@ func AuthMiddleware(lgr *slog.Logger) gin.HandlerFunc {
 			lgr.Error("Invalid token")
 			ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
 			ctx.Abort()
+
 			return
 		}
 
