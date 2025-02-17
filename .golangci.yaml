@@ -1,0 +1,17 @@
+run:
+  timeout: 1m
+linters:
+  enable:
+    - gofmt
+    - goimports
+    - errcheck
+    - staticcheck
+    - ineffassign
+    - unused
+    - govet
+    - gosimple
+    - funlen
+linters-settings:
+  funlen:
+    lines: 75
+    statements: 50
